@@ -1,0 +1,161 @@
+/* -----------------------------
+   Gallery
+----------------------------- */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 固定 3 欄 */
+    gap: 12px;
+    padding: 10px;
+}
+
+.image-card {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.15s;
+    cursor: pointer;
+}
+
+.image-card img.selected {
+    border: 4px solid black;
+}
+
+.folder-label {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+/* -----------------------------
+   Note 分頁
+----------------------------- */
+/* Note 分頁按鈕統一白底、黑字 */
+#page-note .btn {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid #ccc; /* 可自訂邊框顏色 */
+}
+
+/* 滑鼠懸停變化（可選） */
+#page-note .btn:hover {
+    background-color: #f0f0f0 !important;
+    color: black !important;
+}
+/* Note 分頁內容區域 */
+.note-section {
+    display: grid;
+    grid-template-columns: 1fr; /* 每列 1 個 cast */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.note-block {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f8f9fa;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.note-block img {
+    width: 100px;
+    height: auto;
+    border-radius: 4px;
+    float: left;
+    margin-right: 10px;
+}
+
+.note-content {
+    overflow: hidden;
+}
+
+/* -----------------------------
+   留言區
+----------------------------- */
+.chat-container {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chat-new {
+    display: flex;
+    flex-direction: column; /* 手機板縱向 */
+    gap: 0.5rem;
+    width: 100%;
+}
+
+@media(min-width: 768px) {
+    .chat-new {
+        flex-direction: row; /* 桌面板橫向 */
+        align-items: flex-start;
+    }
+}
+
+.chat-input {
+    flex-grow: 1;       /* 填滿剩餘空間 */
+    resize: vertical;   /* 可調整高度 */
+    min-width: 0;       /* 防止被 flex 父容器壓縮 */
+}
+
+.chat-log-list {
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: #fff;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.chat-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 3px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.chat-text {
+    white-space: pre-wrap; /* 保留換行 */
+    flex-grow: 1;
+}
+
+.chat-time {
+    font-size: 0.75rem;
+    color: #888;
+    flex-shrink: 0;
+}
+
+.chat-entry button {
+    flex-shrink: 0;
+    margin-left: 2px;
+}
+
+@media(max-width: 576px) {
+    .chat-new {
+        flex-direction: column;
+    }
+    .chat-entry {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .chat-entry > div,
+    .chat-entry button,
+    .chat-time {
+        margin-top: 3px;
+    }
+}

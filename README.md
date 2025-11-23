@@ -1,2 +1,49 @@
-# IBA_note
-An offline tool to record what you get in IBA (IMAGINARY CAFE AKIHABARA)
+# IBA Note
+
+一個基於python建立離線網頁，用來紀錄IBA內容的小工具。
+包含可自訂的IC/RC圖片與資料，留言的新增與查看編輯功能。
+
+---
+
+- **IC 分頁**  
+  - IC圖片與內容由官方網站(https://imaginary-base.jp/cast/)取得。
+
+- **RC 分頁**  
+  - 尚未完成，預計於後續追加。
+
+- **Note 分頁**  
+  - 僅顯示 IC / RC 分頁中被選中的
+  - 每列顯示一個 Cast  
+  - 查看、編輯、刪除留言  
+  - 留言時間由新到舊  
+  - 支援換行  
+  - 編輯留言欄位大小與新增留言欄位一致  
+  - 預設留言隱藏，點擊 Cast 顯示
+
+- **Guide & Set**  
+  - 官方相關網頁連結  
+  
+- **後續更新規劃**  
+  - Note分頁按鈕排版調整
+  - RC 分頁功能
+  - 多國語言支援
+  - 純離線網頁版本(部分功能刪減)
+  - IC 爬蟲更新(考慮中)
+
+---
+
+## 使用教學
+
+1. 建立python 執行環境 Android / IOS / X86 ，請依各自喜好建立。
+2. 下載專案，請完整下載，並確保檔案結構無變化。
+    (注意：Android可能遇到.db檔案無法正確複製，可先刪除副檔名，複製後再補回。)
+3. 在自己的執行環境安裝flask庫
+```bash
+pip install flask
+```
+4. 執行 IBA_note.py，瀏覽器將自行開啟。
+
+## 問題反饋
+
+歡迎
+
