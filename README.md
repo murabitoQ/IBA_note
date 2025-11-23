@@ -87,7 +87,7 @@ Includes customizable IC/RC images, introduce; notes adding, viewing, and editin
 pip install flask
 ```
 4. IBA_note.py を実行すると、ブラウザが自動で開きます。
-
+---
 1. Set up a Python execution environment on Android / iOS / x86 according to your preference.
 2. Download the project completely and make sure the file structure remains unchanged.
     (Note: On Android, .db files may not copy correctly. You can remove the extension before copying and add it back afterward.)
@@ -96,7 +96,7 @@ pip install flask
 pip install flask
 ```
 4. Run IBA_note.py, the browser will open automatically.
-
+---
 1. 建立python 執行環境 Android / IOS / X86 ，請依各自喜好建立。
 2. 下載專案，請完整下載，並確保檔案結構無變化。
     (注意：Android可能遇到.db檔案無法正確複製，可先刪除副檔名，複製後再補回。)
@@ -123,3 +123,4 @@ Feel free to report program bugs or feature requests, I will handle them in my s
 
  - IC圖片與文字內容屬於 ©IMAGINARY BASE PROJECT https://imaginary-base.jp/
  - code由村人Q完成，使用GPL v3授權。
+
