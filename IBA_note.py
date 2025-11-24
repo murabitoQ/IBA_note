@@ -190,6 +190,7 @@ def api_update_db():
     url = request.args.get("url", "https://imaginary-base.jp/cast/")
     return Response(generate_update(url), mimetype="text/event-stream")
 '''
+
 # -----------------------------
 # 啟動 Flask
 # -----------------------------
