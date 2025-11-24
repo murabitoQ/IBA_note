@@ -12,6 +12,11 @@ All entered data is stored only in the device's /db/chatlog.db, and will not be 
 包含可自訂的IC/RC圖片與資料，留言的新增與查看編輯功能。
 所有輸入的資料僅會保存在裝置的 /db/chat_log.db ，不會上傳。
 
+## 対応プラットフォーム / Supported Platforms / 支援列表
+  - Android：Pydroid 3
+  - Windows：Visual Studio Code
+  - iOS：N/A (pending testing)
+
 ---
 
 - **Imaginary Cast Tab (IC)**  
@@ -126,6 +131,7 @@ Feel free to report program bugs or feature requests, I will handle them in my s
 
  - IC圖片與文字內容屬於 ©IMAGINARY BASE PROJECT https://imaginary-base.jp/
  - code由村人Q完成，使用GPL v3授權。
+
 
 
 
