@@ -70,15 +70,36 @@ async function renderNoteBlocks(type, images) {
         // 內容區
         const content = document.createElement("div");
         content.className = "note-content";
-        content.innerHTML = `
-            <img src="${data.data_content.img_path}" alt="img">
-            <strong>${data.data_content.jp_name || data.data_content.info || ''}</strong>
-            <div id="caption" class="caption-text">${data.data_content.caption || ''}</div>
-        `;
 
+        // 建立圖片元素
+        const imgEl = document.createElement("img");
+        imgEl.src = data.data_content.img_path;
+        imgEl.alt = "img";
+
+        // 建立文字區域容器
+        const textDiv = document.createElement("div");
+        textDiv.className = "note-text";
+
+        // 標題
+        const titleEl = document.createElement("strong");
+        titleEl.textContent = data.data_content.jp_name || data.data_content.info || '';
+
+        // caption
+        const captionEl = document.createElement("div");
+        captionEl.className = "caption-text";
+        captionEl.style.whiteSpace = "pre-wrap"; // 保留換行
+        captionEl.textContent = data.data_content.caption || '';
+
+        // 將標題與 caption 放入文字容器
+        textDiv.append(titleEl, captionEl);
+
+        // 將圖片與文字容器放入 note-content
+        content.append(imgEl, textDiv);
+
+        // 加入到 block
         block.appendChild(content);
         container.appendChild(block);
-
+        
 // -----------------------------
 // 初始化留言區
 // -----------------------------

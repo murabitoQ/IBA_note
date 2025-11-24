@@ -3,9 +3,9 @@
 ----------------------------- */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 固定 3 欄 */
-    gap: 12px;
-    padding: 10px;
+    grid-template-columns: repeat(4, 1fr); /* 固定 3 欄 */
+    gap: 0px;
+    padding: 0px;
 }
 
 .image-card {
@@ -24,7 +24,7 @@
 }
 
 .image-card img.selected {
-    border: 4px solid black;
+    border: 6px solid rgb(0, 0, 255);
 }
 
 .folder-label {
@@ -80,12 +80,38 @@
 }
 
 .note-content {
-    overflow: hidden;
+    display: flex !important;;
+    flex-direction: row !important;; /* 左右排列 */
+    gap: 12px;
+    align-items: flex-start;
+    flex-wrap: nowrap !important;;              /* 不換行 */
+}
+
+.note-content img {
+    width: 120px;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.note-text {
+    flex: 1; /* 填滿剩餘空間 */
 }
 
 .caption-text {
-    white-space: pre-line;
+    margin-top: 4px;
+    white-space: pre-wrap; /* 保留換行 */
 }
+
+@media (max-width: 576px) {
+    .note-content {
+        flex-direction: column; /* 手機螢幕改上下排列 */
+    }
+    .note-content img {
+        width: 100%;
+    }
+}
+
 
 /* -----------------------------
    留言區
