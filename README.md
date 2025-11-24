@@ -59,26 +59,26 @@ All entered data is stored only in the device's /db/chatlog.db, and will not be 
 
 - **Guide & Set**  
   - 公式関連ウェブページへのリンク
+  - 選択されたIC / RC
   
   - Links to official related web pages
+  - Selected IC / RC
 
-  - 官方相關網頁連結  
+  - 官方相關網頁連結
+  - 選中的IC / RC
 
 - **今後の更新予定 / Planned Future Updates**
   - Noteタブのボタン配置の調整
-  - RCタブの機能追加
   - 多言語対応
   - 完全オフライン版（機能の一部を削減）
   - ICスクレイパーの更新（検討中）
 
   - Adjust button layout in the Note tab
-  - RC tab functionality
   - Multi-language support
   - Fully offline web version (with some feature reductions)
   - IC data Web scraper updates (under consideration)
 
   - Note分頁按鈕排版調整
-  - RC 分頁功能
   - 多國語言支援
   - 純離線網頁版本(部分功能刪減)
   - IC 爬蟲更新(考慮中)
@@ -131,6 +131,7 @@ Feel free to report program bugs or feature requests, I will handle them in my s
 
  - IC圖片與文字內容屬於 ©IMAGINARY BASE PROJECT https://imaginary-base.jp/
  - code由村人Q[ X: 村人Q](https://x.com/murahitoQ)完成，使用GPL v3授權。
+
 
 
 
