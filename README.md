@@ -27,11 +27,11 @@ All entered data is stored only in the device's /db/chatlog.db, and will not be 
   - IC圖片與內容由[官方網站](https://imaginary-base.jp/cast/)取得。
 
 - **Real Cast Tab (RC)**  
-  - 未完成で、今後追加予定です。
+  - RC画像と内容は[公式X](https://x.com/imaginary_base) から
   
-  - Not completed yet, planned to be added later.
+  - RC images and content are obtained from the [official X](https://x.com/imaginary_base).
   
-  - 尚未完成，預計於後續追加。
+  - RC圖片與內容由[官方X](https://x.com/imaginary_base)取得。
 
 - **Note Tab (Note)**  
   - IC / RCタブで選択された項目のみ表示
@@ -131,6 +131,7 @@ Feel free to report program bugs or feature requests, I will handle them in my s
 
  - IC圖片與文字內容屬於 ©IMAGINARY BASE PROJECT https://imaginary-base.jp/
  - code由村人Q[ X: 村人Q](https://x.com/murahitoQ)完成，使用GPL v3授權。
+
 
 
 
