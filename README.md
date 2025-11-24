@@ -2,14 +2,15 @@
 
 Pythonで作られたオフラインWebツールで、IBAの内容を記録するための小さなツールです。
 カスタマイズ可能なIC/RC画像とデータ、メモの追加・閲覧・編集機能を含みます。
+入力されたすべてのデータは端末内の /db/chat_log.db にのみ保存され、アップロードされることはありません。
 
 A small offline tool built with Python for recording what you get in IBA.
 Includes customizable IC/RC images, introduce; notes adding, viewing, and editing.
-
+All entered data is stored only in the device's /db/chatlog.db, and will not be uploaded.
 
 一個基於python建立離線網頁，用來紀錄IBA內容的小工具。
 包含可自訂的IC/RC圖片與資料，留言的新增與查看編輯功能。
-所有輸入的資料僅會保存在裝置的chatlog.db，不會上傳。
+所有輸入的資料僅會保存在裝置的 /db/chat_log.db ，不會上傳。
 
 ---
 
@@ -125,5 +126,6 @@ Feel free to report program bugs or feature requests, I will handle them in my s
 
  - IC圖片與文字內容屬於 ©IMAGINARY BASE PROJECT https://imaginary-base.jp/
  - code由村人Q完成，使用GPL v3授權。
+
 
 
