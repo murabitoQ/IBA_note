@@ -82,6 +82,10 @@
     overflow: hidden;
 }
 
+.caption-text {
+    white-space: pre-line;
+}
+
 /* -----------------------------
    留言區
 ----------------------------- */

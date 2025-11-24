@@ -64,21 +64,42 @@ class IC_DB(BaseDB):
 # RC 資料庫
 # -----------------------------
 class RC_DB(BaseDB):
-
+    def save_cast(self, cast_id, jp_name, caption, img_path):
+        try:
+            cur = self.conn.cursor()
+            cur.execute("""
+                INSERT OR REPLACE INTO cast 
+                (id, jp_name, caption, img_path)
+                VALUES (?, ?, ?, ?, ?)
+            """, (cast_id, jp_name, caption, img_path))
+            self.conn.commit()
+            cur.close()
+        except sqlite3.Error as e:
+            print(f"[DB ERROR] 儲存 {cast_id} 時錯誤：{e}")
     def get_data_by_image(self, image_src):
         try:
             cur = self.conn.cursor()
-            cur.execute("SELECT * FROM rc_data WHERE image_src=?", (image_src,))
+            cur.execute("""
+                SELECT id, jp_name, caption, img_path 
+                FROM cast 
+                WHERE jp_name = ?
+            """, (image_src,))
             row = cur.fetchone()
             cur.close()
 
             if row:
-                return dict(row)
-            return {"info": "無資料"}
+                return {
+                    "id": row[0],
+                    "jp_name": row[1],
+                    "caption": row[2],
+                    "img_path": row[3]
+                }
+            else:
+                return None
 
         except sqlite3.Error as e:
-            print(f"[DB ERROR] 查詢 RC '{image_src}' 時錯誤：{e}")
-            return {"info": "DB 發生錯誤"}
+            print(f"[DB ERROR] 查詢 '{image_src}' 時錯誤：{e}")
+            return None
 
 
 # -----------------------------

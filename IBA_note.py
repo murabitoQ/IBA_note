@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, request, Response, send_from_directory
 from db import IC_DB, RC_DB, ChatLogDB
-#from scraper import Cast_Scraper
+from scraper import Cast_Scraper
 import os
 import webbrowser
 from threading import Timer
@@ -178,7 +178,6 @@ def chat_delete():
 # -----------------------------
 # SSE 更新 DB
 # -----------------------------
-'''
 def generate_update(url):
     scraper = Cast_Scraper()
     for msg in scraper.scrape_all(url):
@@ -189,7 +188,7 @@ def generate_update(url):
 def api_update_db():
     url = request.args.get("url", "https://imaginary-base.jp/cast/")
     return Response(generate_update(url), mimetype="text/event-stream")
-'''
+
 # -----------------------------
 # 啟動 Flask
 # -----------------------------

@@ -29,7 +29,16 @@ function toggleSelection(type, folderName, imgElement) {
         set.add(folderName);
         imgElement.classList.add("selected");
     }
+    updateSelectionDisplay();
     renderAllNoteBlocks();
+}
+
+// === 更新 Guide & Set 顯示的選中列表 ===
+function updateSelectionDisplay() {
+    document.getElementById("selected-ic").textContent =
+        selectedIC.size > 0 ? Array.from(selectedIC).join(", ") : "";
+    document.getElementById("selected-rc").textContent =
+        selectedRC.size > 0 ? Array.from(selectedRC).join(", ") : "";
 }
 
 // -----------------------------
@@ -64,7 +73,7 @@ async function renderNoteBlocks(type, images) {
         content.innerHTML = `
             <img src="${data.data_content.img_path}" alt="img">
             <strong>${data.data_content.jp_name || data.data_content.info || ''}</strong>
-            <p>${data.data_content.caption || ''}</p>
+            <div id="caption" class="caption-text">${data.data_content.caption || ''}</div>
         `;
 
         block.appendChild(content);
@@ -246,7 +255,6 @@ renderGallery("RC", "rc-gallery");
 // -----------------------------
 // Guide & Set 更新 DB
 // -----------------------------
-/*
 document.getElementById('update-db-btn').addEventListener('click', () => {
     const url = document.getElementById('db-url-input').value || "https://imaginary-base.jp/cast/";
     const logDiv = document.getElementById('update-log');
@@ -260,11 +268,10 @@ document.getElementById('update-db-btn').addEventListener('click', () => {
     };
     eventSource.onerror = () => eventSource.close();
 });
-*/
+
 // -----------------------------
 // 語言切換
 // -----------------------------
-/*
 const textMap = {
     zh: {
         'nav-title': 'DB Editor', 'nav-ic': 'IC', 'nav-rc': 'RC', 'nav-note': 'Note', 'nav-guide': 'Guide & Set',
@@ -295,4 +302,3 @@ document.getElementById('language-select').addEventListener('change', () => {
         if(el) el.textContent = textMap[lang][id];
     }
 });
-*/
