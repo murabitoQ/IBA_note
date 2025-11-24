@@ -46,6 +46,7 @@
     background-color: white !important;
     color: black !important;
     border: 1px solid #ccc; /* 可自訂邊框顏色 */
+    flex-wrap: nowrap;
 }
 
 /* 滑鼠懸停變化（可選） */
@@ -95,18 +96,32 @@
     border-top: 1px solid #ccc;
 }
 
+/* 新增留言區容器 */
 .chat-new {
-    display: flex;
-    flex-direction: column; /* 手機板縱向 */
-    gap: 0.5rem;
+    display: flex !important;        /* 固定使用 flex row */
+    flex-direction: row !important;  /* 左右排列 */
+    gap: 8px;
+    align-items: flex-start;
+    flex-wrap: nowrap;               /* 不換行 */
     width: 100%;
 }
 
-@media(min-width: 768px) {
-    .chat-new {
-        flex-direction: row; /* 桌面板橫向 */
-        align-items: flex-start;
-    }
+/* 留言輸入欄 */
+.chat-new .chat-input {
+    flex-grow: 1;     /* 填滿剩餘空間 */
+    min-width: 0;     /* 避免在窄屏導致超出 */
+}
+
+/* 按鈕 */
+.chat-new .btn {
+    flex-shrink: 0;   /* 不縮小 */
+}
+
+/* 按鈕群固定不縮小 */
+.edit-btn-group {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;  /* 不縮小 */
 }
 
 .chat-input {
@@ -124,15 +139,6 @@
     border-radius: 4px;
 }
 
-.chat-entry {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 0.5rem;
-    padding: 3px 0;
-    border-bottom: 1px solid #eee;
-}
-
 .chat-text {
     white-space: pre-wrap; /* 保留換行 */
     flex-grow: 1;
@@ -144,22 +150,26 @@
     flex-shrink: 0;
 }
 
-.chat-entry button {
-    flex-shrink: 0;
-    margin-left: 2px;
+/* Note 分頁留言項目 */
+.chat-entry {
+    display: flex;
+    justify-content: space-between; /* 左右分開 */
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+    padding: 3px 0;
 }
 
-@media(max-width: 576px) {
-    .chat-new {
-        flex-direction: column;
-    }
-    .chat-entry {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .chat-entry > div,
-    .chat-entry button,
-    .chat-time {
-        margin-top: 3px;
-    }
+/* 按鈕群固定在右側，不換行 */
+.chat-entry .btn-group-right {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;      /* 防止縮小 */
+    flex-wrap: nowrap;    /* 不換行 */
+    align-items: center;
+}
+
+/* 調整按鈕大小 */
+.chat-entry .btn-group-right button {
+    min-width: 30px;     /* 可依需求調整 */
 }

@@ -89,7 +89,7 @@ async function renderNoteBlocks(type, images) {
 
         // --- 新增留言區 ---
         const newChat = document.createElement("div");
-        newChat.className = "chat-new d-flex flex-column flex-md-row align-items-start gap-2 mb-2";
+        newChat.className = "chat-new mb-2";
 
         const textarea = document.createElement("textarea");
         textarea.className = "form-control chat-input flex-grow-1";
@@ -149,8 +149,9 @@ async function renderNoteBlocks(type, images) {
                 textSpan.textContent = entry.content;
 
                 // 時間 + 編輯/刪除按鈕
+                // 建立按鈕群組
                 const btnGroup = document.createElement("div");
-                btnGroup.className = "d-flex gap-1 flex-shrink-0 flex-column flex-md-row align-items-start";
+                btnGroup.className = "btn-group-right"; // 這裡用CSS class控制固定在右邊
 
                 const timeSpan = document.createElement("span");
                 timeSpan.className = "chat-time text-muted small";
@@ -163,22 +164,24 @@ async function renderNoteBlocks(type, images) {
                 const deleteBtn = document.createElement("button");
                 deleteBtn.className = "btn btn-danger btn-sm";
                 deleteBtn.textContent = "🗑️";
+
                 btnGroup.append(timeSpan, editBtn, deleteBtn);
                 item.append(textSpan, btnGroup);
                 logList.appendChild(item);
 
                 // 編輯
                 editBtn.onclick = () => {
+                    // 編輯區容器
                     const editContainer = document.createElement("div");
-                    editContainer.className = "chat-new d-flex flex-column flex-md-row align-items-start gap-2 mb-1";
-
+                    editContainer.className = "chat-new mb-1";
+                    // 編輯輸入框
                     const editArea = document.createElement("textarea");
                     editArea.className = "form-control chat-input";
                     editArea.rows = 3;
                     editArea.value = entry.content;
-
+                    // 按鈕群
                     const btnGroupEdit = document.createElement("div");
-                    btnGroupEdit.className = "d-flex gap-1 flex-shrink-0";
+                    btnGroupEdit.className = "edit-btn-group";
                     
                     const saveBtn = document.createElement("button");
                     saveBtn.className = "btn btn-success btn-sm";
@@ -189,8 +192,6 @@ async function renderNoteBlocks(type, images) {
                     cancelBtn.textContent = "❌";
 
                     btnGroupEdit.append(saveBtn, cancelBtn);
-
-                    // **正確做法：textarea 放在 editContainer，btnGroupEdit 放右側**
                     editContainer.append(editArea, btnGroupEdit);
                     item.innerHTML = "";
                     item.appendChild(editContainer);
